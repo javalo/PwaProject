@@ -1,4 +1,4 @@
-/*console.log("hello depuis le service worker");
+console.log("hello depuis le service worker");
 
 self.addEventListener('install', (evt) => {
     console.log(`sw installé à ${new Date().toLocaleTimeString()}`);
@@ -22,10 +22,23 @@ self.addEventListener('fetch', (evt) => {
  
     console.log('sw intercepte la requête suivante via fetch', evt);
     console.log('url interceptée', evt.request.url);
+
+    evt.respondWith(
+        caches.match(evt.request)
+            .then(cachedResponse => {
+                if (cachedResponse) {
+                    return cachedResponse;
+                }
+                return fetch(evt.request);
+            })
+    );
+
+
 });
 
 
-*/
+
+
 
 
 const cacheName = 'veille-techno' + '1.1';
@@ -51,3 +64,8 @@ self.addEventListener('install', (evt) => {
     evt.waitUntil(cachePromise);
  
 });
+
+
+
+
+
