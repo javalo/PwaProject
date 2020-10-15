@@ -86,15 +86,21 @@ self.addEventListener('fetch', (evt) => {
  
 });
 
-const cacheName = 'veille-techno' + '1.2';
+
+
+
+const cacheName = 'veille-techno' + '1.3';
  
 self.addEventListener('install', (evt) => {
     console.log(`sw installé à ${new Date().toLocaleTimeString()}`);
  
-    const cachePromise = caches.open(cacheName).then(cache => {
-        return cache.addAll([
-            'index.html',
-            'main.js',
+   // 4.4 Gestion du cache par le SW
+const cachePromise = caches.open(cacheName).then(cache => {
+    return cache.addAll([
+      // 9.4 Ajouter les librairies iDB
+      'idb/idb.js',
+      'idb/database.js',
+      'index.html',
             'style.css',
             'vendors/bootstrap4.min.css',
             'add_techno.html',
