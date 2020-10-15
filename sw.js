@@ -1,4 +1,4 @@
-console.log("hello depuis le service worker");
+//console.log("hello depuis le service worker");
 
 self.addEventListener('install', (evt) => {
     console.log(`sw installé à ${new Date().toLocaleTimeString()}`);
@@ -19,9 +19,6 @@ self.addEventListener('activate', (evt) => {
     evt.waitUntil(cacheCleanPromise);
 });
  
-
-
-
 
 self.addEventListener('fetch', (evt) => {
  
@@ -89,9 +86,6 @@ self.addEventListener('fetch', (evt) => {
  
 });
 
-
-
-	
 const cacheName = 'veille-techno' + '1.2';
  
 self.addEventListener('install', (evt) => {
@@ -99,7 +93,7 @@ self.addEventListener('install', (evt) => {
  
     const cachePromise = caches.open(cacheName).then(cache => {
         return cache.addAll([
-           // 'index.html',
+            'index.html',
             'main.js',
             'style.css',
             'vendors/bootstrap4.min.css',
@@ -119,4 +113,29 @@ self.addEventListener('install', (evt) => {
 
 
 
+self.registration.showNotification("Notification du SW", {
+    body:"je suis une notification dite persistante",
+  
+    // 7.4 Options de notifications grâce aux actions
+    actions:[
+        {action:"accept", title:"accepter"},
+        {action: "refuse", title: "refuser"}
+    ]
+})
+ 
 
+
+
+self.addEventListener("notificationclick", evt => {
+    console.log("notificationclick evt", evt);
+    if(evt.action === "accept"){
+        console.log("vous avez accepté");
+    } else if(evt.action === "refuse"){
+        console.log("vous avez refusé");
+    } else{
+        console.log("vous avez cliqué sur la notification (pas sur un bouton)");
+    }
+  
+    // 7.5 Fermer programmatiquement une notification
+    evt.notification.close();
+})
