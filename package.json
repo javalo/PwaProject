@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/javalo/PwaProject/issues"
   },
-  "homepage": "https://github.com/javalo/PwaProject#readme"
+  "homepage": "https://github.com/javalo/PwaProject#readme",
+  "dependencies": {
+    "web-push": "^3.4.4"
+  }
 }
