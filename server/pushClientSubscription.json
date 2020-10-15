@@ -1,0 +1,7 @@
+{
+    "endpoint": "{PROPRIETEE endpoint DANS LA CONSOLE}",
+    "keys": {
+      "p256dh": "{PROPRIETEE p256DH key DANS LA CONSOLE}",
+      "auth": "{PROPRIETEE auth key DANS LA CONSOLE}"
+    }
+  }
