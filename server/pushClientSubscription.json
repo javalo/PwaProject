@@ -1,7 +1,7 @@
 {
-    "endpoint": "{PROPRIETEE endpoint DANS LA CONSOLE}",
+    "endpoint": "https://fcm.googleapis.com/fcm/send/cFs2jsAQFZo:APA91bG2FDhQlt8xmnSCQaV-WVrtp6lXBFJ6AoKirBNBp8CunMm_WYHu_7IM-0mH9Wa-lYbF6n2kTTEvv9lW4M4-OpIS61knCq7sPWKS_ILGMcDZNqVqtsNHtvdICdcfQrNRIX92tBzB",
     "keys": {
-      "p256dh": "{PROPRIETEE p256DH key DANS LA CONSOLE}",
-      "auth": "{PROPRIETEE auth key DANS LA CONSOLE}"
+      "p256dh": "BFZMkEWxcVA4IYedqIE2cS6uRWDliSEOII2yX0RaSMZwrjEtDSH3DQwI+ExpjrtsTrA2N9J0O3B3eyji4qMyJeI=",
+      "auth": "kpg+Zp0KqVZyhfUhGH6nrA=="
     }
   }
