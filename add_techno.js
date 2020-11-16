@@ -14,6 +14,8 @@ addTechnoForm.addEventListener('submit', evt => {
         url: technoUrlField.value
     }
 
+
+
     fetch('https://us-central1-pwa-technos-lo.cloudfunctions.net/addTechno',{
             method: 'POST',
             headers: {

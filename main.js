@@ -1,5 +1,6 @@
 const technosDiv = document.querySelector('#technos');
- 
+ 	
+////9.3 Branchement de notre Bdd Firebase
 function loadTechnologies(technos) {
     fetch('https://us-central1-pwa-technos-lo.cloudfunctions.net/getTechnos')
         .then(response => {
